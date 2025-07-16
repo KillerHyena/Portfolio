@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaryan Verma | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e293b',
+                        accent: '#0ea5e9',
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #3b82f6;
+            margin: 12px auto 30px;
+            border-radius: 2px;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: center bottom;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .type-cursor {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-primary flex items-center">
+                    <span>Portfolio</span>
+                    <span class="text-accent">.</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium active">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-primary font-medium">Projects</a>
+                    <a href="#certificates" class="nav-link text-gray-700 hover:text-primary font-medium">Certificates</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-primary bg-blue-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50">About</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50">Projects</a>
+                <a href="#certificates" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50">Certificates</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-white to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        Hi, I'm <span class="text-primary">Aaryan Verma</span>
+                    </h1>
+                    <div class="mb-6">
+                        <div class="text-xl md:text-2xl font-medium text-gray-600 mb-2">
+                            <span id="type-text">Mechanical Engineering Sophomore | Tech Enthusiast</span>
+                            <span class="type-cursor">|</span>
+                        </div>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        I have created some amazing projects using HTML, CSS, and JavaScript. I am passionate about web development and always eager to learn new technologies.
+                        <span class="block mt-2 text-accent font-medium">Turning ideas into digital reality.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center">
+                            Download Resume <i class="fas fa-download ml-2"></i>
+                        </a>
+                        <a href="#contact" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center relative">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-primary to-accent rounded-full w-64 h-64 md:w-80 md:h-80 flex items-center justify-center shadow-xl">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-full w-60 h-60 md:w-76 md:h-76 overflow-hidden flex items-center justify-center">
+                                <i class="fas fa-user text-7xl text-gray-500"></i>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-accent text-white px-6 py-2 rounded-full font-bold shadow-lg">
+                            <span>Available for work</span>
+                        </div>
+                        <div class="absolute -top-4 -left-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center text-white shadow-lg animate-bounce-slow">
+                            <i class="fas fa-medal text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                <div class="section-title"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-2/5">
+                    <div class="bg-gradient-to-br from-gray-100 to-white p-1 rounded-2xl shadow-lg">
+                        <div class="bg-white p-6 rounded-2xl">
+                            <h3 class="text-xl font-semibold mb-4 text-secondary">Personal Info</h3>
+                            <ul class="space-y-3">
+                                <li class="flex">
+                                    <span class="w-32 text-gray-600">Full Name:</span>
+                                    <span class="font-medium">Aaryan Verma</span>
+                                </li>
+                                <li class="flex">
+                                    <span class="w-32 text-gray-600">Location:</span>
+                                    <span class="font-medium">New Delhi , Delhi , India</span>
+                                </li>
+                                <li class="flex">
+                                    <span class="w-32 text-gray-600">Email:</span>
+                                    <span class="font-medium">aaryanverma933@gmail.com</span>
+                                </li>
+                                <li class="flex">
+                                    <span class="w-32 text-gray-600">Education:</span>
+                                    <span class="font-medium">B.Tech Mechanical Engineering</span>
+                                </li>
+                                <li class="flex">
+                                    <span class="w-32 text-gray-600">Languages:</span>
+                                    <span class="font-medium">English, Hindi</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-8">
+                                <a href="https://drive.google.com/drive/folders/1opOzjy2B3RqnThVzIx05qDB9KgCDCUDq?usp=drive_link" class="inline-flex items-center bg-primary hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition">
+                                    View Certificates <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-3/5">
+                    <h3 class="text-2xl font-semibold mb-6 text-secondary">My Journey</h3>
+                    <div class="prose prose-lg text-gray-600 mb-8">
+                        <p class="mb-4">
+                            I'm a passionate frontend developer with 5 years of experience creating modern web applications. 
+                            My journey began with a computer science degree where I discovered my love for web development.
+                        </p>
+                        <p class="mb-4">
+                            I specialize in building responsive and accessible user interfaces using modern JavaScript frameworks 
+                            and CSS libraries. I believe in writing clean, maintainable code that solves real problems.
+                        </p>
+                        <p>
+                            When I'm not coding, you can find me hiking in the mountains, reading sci-fi novels, 
+                            or experimenting with new recipes in the kitchen.
+                        </p>
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold mb-6 text-secondary">My Skills</h3>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">HTML5 & CSS3</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">JavaScript</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">React.js</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">MERN Stack</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">Tailwind CSS</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">Responsive Design</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">UI/UX Design</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
+                <div class="section-title"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Here are some of my recent projects. Each project represents a unique challenge and solution.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-5xl text-gray-500"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">
+                            MERN Stack
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-secondary">Restuarent Website</h3>
+                        <p class="text-gray-600 mb-4">
+                            Website for a local restaurant featuring menu, reservation system, and online ordering.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">MERN Stack</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">render</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">MongoDB</span>
+                        </div>
+                        <a href="https://restaurant-app-163i.onrender.com/" class="text-primary font-medium hover:underline flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center">
+                            <i class="fas fa-plane text-5xl text-gray-500"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            MERN Stack
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-secondary">To-do List App</h3>
+                        <p class="text-gray-600 mb-4">
+                            Simple to-do list application with features like adding, editing, and deleting tasks.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">MERN Stack</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">netlify</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">render</span>
+                        </div>
+                        <a href="https://mern-stack-projectaaryan-verma.netlify.app/" class="text-primary font-medium hover:underline flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed w-full h-48 flex items-center justify-center">
+                            <i class="fas fa-tasks text-5xl text-gray-500"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Front End
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-secondary"></h3>
+                        <p class="text-gray-600 mb-4">
+                            Collaborative task management tool with drag & drop interface and team features.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Html</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">CSS</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">JS</span>
+                        </div>
+                        <a href="https://happiestbirthdaywishes.netlify.app/" class="text-primary font-medium hover:underline flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My Certificates</h2>
+                <div class="section-title"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    View all my professional certificates and achievements in my Google Drive folder
+                </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12 shadow-lg">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-2/5 flex justify-center">
+                        <div class="bg-gradient-to-br from-primary to-accent rounded-2xl w-64 h-64 flex items-center justify-center shadow-xl">
+                            <i class="fas fa-certificate text-8xl text-white opacity-90"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-3/5 text-center md:text-left">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-800">Professional Certificates</h3>
+                        <p class="text-gray-600 mb-6">
+                            I've completed various certifications to enhance my skills and stay updated with the latest 
+                            technologies. All my certificates are available for viewing in my Google Drive folder.
+                        </p>
+                        <p class="text-gray-600 mb-8">
+                            Click the button below to access my certificates collection on Google Drive.
+                        </p>
+                        
+                        <a href="https://drive.google.com/drive/folders/1opOzjy2B3RqnThVzIx05qDB9KgCDCUDq?usp=drive_link" 
+                           target="_blank"
+                           class="inline-flex items-center bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                            <i class="fab fa-google-drive text-xl mr-3"></i>
+                            View Certificates on Google Drive
+                        </a>
+                        
+                        <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
+                            <div class="flex items-center bg-white p-3 rounded-lg shadow">
+                                <i class="fas fa-award text-yellow-500 text-2xl mr-2"></i>
+                                <span>12+ Certificates</span>
+                            </div>
+                            <div class="flex items-center bg-white p-3 rounded-lg shadow">
+                                <i class="fas fa-medal text-blue-500 text-2xl mr-2"></i>
+                                <span>5+ Specializations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <div class="section-title"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Have a project in mind or want to discuss opportunities? Feel free to reach out!
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2">
+                    <form class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Your name" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Your message..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gradient-to-br from-primary to-accent rounded-2xl p-8 text-white h-full shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-8">Contact Information</h3>
+                        
+                        <div class="space-y-6 mb-10">
+                            <div class="flex items-start">
+                                <div class="bg-white bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-lg">Email</h4>
+                                    <p>aaryanverma933@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-white bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-lg">Phone</h4>
+                                    <p>+91 73034 94549</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-white bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-lg">Location</h4>
+                                    <p>New Delhi , Delhi , India</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-lg mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/aaryanverma2007/" class="bg-white bg-opacity-20 hover:bg-opacity-30 w-12 h-12 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                </a>
+                                <a href="https://github.com/KillerHyena" class="bg-white bg-opacity-20 hover:bg-opacity-30 w-12 h-12 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="https://www.instagram.com/bookish__strokes/" class="bg-white bg-opacity-20 hover:bg-opacity-30 w-12 h-12 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                                <a href="https://www.instagram.com/aaryanverma__17/" class="bg-white bg-opacity-20 hover:bg-opacity-30 w-12 h-12 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span>Alex Morgan</span>
+                        <span class="text-accent">.</span>
+                    </h3>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Creating beautiful digital experiences with modern web technologies. 
+                        Passionate about UI/UX design and frontend development.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/aaryanverma2007/" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://github.com/KillerHyena" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bookish__strokes/" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aaryanverma__17/" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="#certificates" class="text-gray-400 hover:text-white transition">Certificates</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <span>aaryanverma933@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3"></i>
+                            <span>+91 7303494549</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>New Delhi , Delhi , India</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 Aaryan Verma. All rights reserved.</p>
+                <p class="mt-2">Designed and built with ❤️ using Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                // Update active link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Typing effect for hero section
+        const typeText = document.getElementById('type-text');
+        const texts = ["Frontend Developer", "UI Designer", "Web Developer"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                // Remove character
+                typeText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // Add character
+                typeText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            // Determine typing speed
+            let typeSpeed = 100;
+            
+            if (isDeleting) {
+                typeSpeed /= 2; // Faster when deleting
+            }
+            
+            // When word is complete
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex++;
+                if (textIndex === texts.length) textIndex = 0;
+            }
+            
+            setTimeout(type, typeSpeed);
+        }
+        
+        // Start typing effect
+        setTimeout(type, 1000);
+        
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                // Simple validation
+                if (!name || !email || !message) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+                
+                // In a real app, you would send this data to a server
+                console.log('Form submitted:', { name, email, message });
+                
+                // Show success message
+                alert('Thank you for your message! I will get back to you soon.');
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+        
+        // Update active link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 100)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
