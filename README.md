@@ -1,4 +1,4 @@
-````markdown
+
 # 🌐 Aaryan Verma – Personal Portfolio Website
 
 Welcome to my personal portfolio website! This project showcases my work, skills, certifications, and contact information in a clean and responsive layout using **Tailwind CSS**, **Font Awesome**, and vanilla **HTML/CSS/JS**.
