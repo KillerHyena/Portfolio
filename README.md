@@ -35,9 +35,11 @@ You can view the live site [here](https://aaryan-verma-portofolio.netlify.app/)
 ## 📁 Folder Structure
 
 
-📦portfolio
- ┣ 📜index.html
- ┣ 📜README.md
+```
+📦 portfolio
+ ┣ 📜 index.html
+ ┣ 📜 README.md
+```
 
 ---
 
@@ -70,9 +72,6 @@ This project is open source and free to use for personal purposes. Attribution a
 
 **Designed and built with ❤️ by Aaryan Verma**
 
-```
-
 ---
 
-Let me know if you'd like to turn this into a GitHub Pages project or need a `deploy.sh` for auto-deployment!
-```
+Let me know if you'd like to turn this into a GitHub Pages project or need a `deploy.sh` script for automated deployment!
