@@ -34,7 +34,7 @@ You can view the live site [here](https://aaryan-verma-portofolio.netlify.app/)
 
 ## 📁 Folder Structure
 
-```bash
+
 📦portfolio
  ┣ 📜index.html
  ┣ 📜README.md
