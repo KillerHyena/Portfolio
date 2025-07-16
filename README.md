@@ -5,7 +5,7 @@ Welcome to my personal portfolio website! This project showcases my work, skills
 
 ## 🔍 Live Preview
 
-You can view the live site [here](https://aaryan-verma-portofolio.netlify.app/) *(Replace with your deployed link)*
+You can view the live site [here](https://aaryan-verma-portofolio.netlify.app/)
 
 ---
 
